@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot de Programação</title>
+</head>
+<body>
+    <h1>Chatbot de Programação</h1>
+
+    <form method="POST">
+        <div>
+            <label for="language">Selecione a linguagem de programação:</label><br>
+            <input type="radio" id="java" name="language" value="Java">Java<br>
+            <input type="radio" id="kotlin" name="language" value="Kotlin">Kotlin<br>
+            <input type="radio" id="python" name="language" value="Python">Python<br>
+            <input type="radio" id="c" name="language" value="C">C<br>
+        </div>
+        
+        <div>
+            <label for="intention">Intenção do usuário:</label><br>
+            <textarea id="intention" name="intention" rows="4" cols="50"></textarea>
+        </div>
+
+        <div>
+            <label for="code">Código:</label><br>
+            <textarea id="code" name="code" rows="4" cols="50"></textarea>
+        </div>
+
+        <div>
+            <button type="submit">Enviar</button>
+        </div>
+    </form>
+
+    {% if response %}
+        <h2>Resposta:</h2>
+        <p>{{ response }}</p>
+    {% endif %}
+</body>
+</html>
