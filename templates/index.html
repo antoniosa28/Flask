@@ -3,30 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chatbot para Correções de Erros/Bugs de Programação</title>
+    <title>Ferramenta para Correções de Erros/Bugs de Programação</title>
   </head>
   <body>
-    <h1>Chatbot para Correções de Erros/Bugs de Programação</h1>
+    <h1>Ferramenta para Correções de Erros/Bugs de Programação</h1>
 
     <form method="POST">
       <div>
-        <label for="language">Selecione a linguagem de programação:</label
+        <label for="language"
+          >Selecione a linguagem de programação/marcação:</label
         ><br />
-        <input type="radio" id="java" name="language" value="Java" />Java<br />
-        <input
-          type="radio"
-          id="kotlin"
-          name="language"
-          value="Kotlin"
-        />Kotlin<br />
-        <input
-          type="radio"
-          id="python"
-          name="language"
-          value="Python"
-        />Python<br />
-        <input type="radio" id="c" name="language" value="C" />C<br />
-        <input type="radio" id="html" name="language" value="Html" />Html<br />
+        <input type="radio" id="java" name="language" value="Java" {% if
+        request.form.language == 'Java' %}checked{% endif %} />Java<br />
+        <input type="radio" id="kotlin" name="language" value="Kotlin" {% if
+        request.form.language == 'Kotlin' %}checked{% endif %} />Kotlin<br />
+        <input type="radio" id="python" name="language" value="Python" {% if
+        request.form.language == 'Python' %}checked{% endif %} />Python<br />
+        <input type="radio" id="c" name="language" value="C" {% if
+        request.form.language == 'C' %}checked{% endif %} />C<br />
+        <input type="radio" id="html" name="language" value="Html" {% if
+        request.form.language == 'Html' %}checked{% endif %} />HTML<br />
       </div>
 
       <div>
@@ -35,7 +31,9 @@
           ao executar o código.
         </p>
         <label for="intention">Intenção do usuário:</label><br />
-        <textarea id="intention" name="intention" rows="4" cols="50"></textarea>
+        <textarea id="intention" name="intention" rows="4" cols="50">
+{{ request.form.intention }}</textarea
+        >
       </div>
 
       <div>
@@ -44,11 +42,14 @@
           baseado na intenção acima.
         </p>
         <label for="code">Código:</label><br />
-        <textarea id="code" name="code" rows="4" cols="50"></textarea>
+        <textarea id="code" name="code" rows="4" cols="50">
+{{ request.form.code }}</textarea
+        >
       </div>
 
       <div>
         <button type="submit">Enviar</button>
+        <button type="button" onclick="limparCampos()">Limpar</button>
       </div>
     </form>
 
@@ -56,12 +57,23 @@
     <h2>Resposta:</h2>
     <p>{{ response }}</p>
     {% endif %}
-    <br />
-    <br />
+
+    <br /><br />
     <a
       href="https://docs.google.com/forms/d/e/1FAIpQLSd9mLKxdP_XDVQhOQ9f8Y15D8NTP12RyShaGGI7tJk1Bv8uKw/viewform?usp=sf_link"
     >
       Clique aqui para avaliar a ferramenta.
     </a>
+
+    <script>
+      function limparCampos() {
+        document.getElementById("intention").value = "";
+        document.getElementById("code").value = "";
+        const radios = document.querySelectorAll(
+          "input[type=radio][name=language]"
+        );
+        radios.forEach((radio) => (radio.checked = false));
+      }
+    </script>
   </body>
 </html>
