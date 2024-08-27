@@ -21,8 +21,6 @@
         request.form.language == 'Python' %}checked{% endif %} />Python<br />
         <input type="radio" id="c" name="language" value="C" {% if
         request.form.language == 'C' %}checked{% endif %} />C<br />
-        <input type="radio" id="html" name="language" value="Html" {% if
-        request.form.language == 'Html' %}checked{% endif %} />HTML<br />
       </div>
 
       <div>
@@ -56,7 +54,7 @@
     {% if response %}
     <h2>Resposta:</h2>
     <p>{{ response }}</p>
-    {% endif %}
+    {% endif %}   
 
     <br /><br />
     <a
