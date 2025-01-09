@@ -3,15 +3,196 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ferramenta para Correções de Erros/Bugs de Programação</title>
+    <title>Ferramenta para Correções de Erros de Programação</title>
+
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+        margin: 0;
+        padding: 0;
+        background: url("fundo.jpg") no-repeat center fixed;
+        background-size: cover;
+        color: #fff;
+      }
+
+      h1 {
+        text-align: center;
+        color: #4a90e2;
+        margin-top: 20px;
+        font-size: 2rem;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+      }
+
+      form {
+        max-width: 600px;
+        margin: 20px auto;
+        background: rgba(0, 0, 0, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+        color: #fff;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: 500;
+        color: #4a90e2;
+      }
+
+      input[type="radio"] {
+        margin-right: 5px;
+      }
+
+      textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #4a90e2;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        font-size: 1rem;
+        resize: vertical;
+        transition: border-color 0.3s ease;
+      }
+
+      textarea:focus {
+        border-color: #66d9ef;
+        outline: none;
+      }
+
+      button {
+        padding: 10px 15px;
+        margin-right: 10px;
+        font-size: 1rem;
+        font-weight: 500;
+        color: #fff;
+        background-color: #4a90e2;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.2s;
+      }
+
+      button[type="button"] {
+        background-color: #e94e77;
+      }
+
+      button:hover {
+        background-color: #357ab8;
+        transform: scale(1.05);
+      }
+
+      button[type="button"]:hover {
+        background-color: #c44165;
+      }
+
+      a {
+        display: inline-block;
+        text-align: center;
+        margin: 20px auto;
+        color: #4a90e2;
+        text-decoration: none;
+        font-weight: 500;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .response {
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        background: rgba(0, 0, 0, 0.8);
+        border: 1px solid #4a90e2;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+        color: #fff;
+        font-family: monospace;
+        white-space: pre-wrap;
+        overflow-x: auto;
+      }
+
+      .response h2 {
+        margin-top: 0;
+        color: #4a90e2;
+      }
+
+      @media (max-width: 768px) {
+        body {
+          padding: 0 10px;
+        }
+
+        form {
+          padding: 15px;
+          border-radius: 8px;
+        }
+
+        textarea {
+          font-size: 0.9rem;
+          padding: 8px;
+        }
+
+        button {
+          font-size: 0.9rem;
+          padding: 8px 12px;
+        }
+
+        h1 {
+          font-size: 1.5rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        body {
+          padding: 0 5px;
+        }
+
+        form {
+          padding: 10px;
+          border-radius: 5px;
+        }
+
+        textarea {
+          font-size: 0.8rem;
+          padding: 6px;
+        }
+
+        button {
+          display: block;
+          width: 100%;
+          margin-bottom: 10px;
+          font-size: 0.8rem;
+          padding: 6px;
+        }
+
+        h1 {
+          font-size: 1.2rem;
+        }
+
+        .response {
+          font-size: 0.8rem;
+          padding: 10px;
+        }
+        .response h2 {
+          font-size: 1rem;
+        }
+
+        a {
+          font-size: 0.8rem;
+        }
+      }
+    </style>
   </head>
   <body>
-    <h1>Ferramenta para Correções de Erros/Bugs de Programação</h1>
+    <h1>Ferramenta para Correções de Erros de Programação</h1>
 
     <form method="POST">
       <div>
-        <label for="language"
-          >Selecione a linguagem de programação:</label
+        <label for="language">Selecione a linguagem de programação:</label
         ><br />
         <input type="radio" id="java" name="language" value="Java" {% if
         request.form.language == 'Java' %}checked{% endif %} />Java<br />
@@ -54,7 +235,7 @@
     {% if response %}
     <h2>Resposta:</h2>
     <p>{{ response }}</p>
-    {% endif %}   
+    {% endif %}
 
     <br /><br />
     <a
