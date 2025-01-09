@@ -6,11 +6,11 @@
     <title>Ferramenta para Correções de Erros de Programação</title>
 
     <style>
-        body {
-        font-family: 'Roboto', sans-serif;
+      body {
+        font-family: "Roboto", sans-serif;
         margin: 0;
         padding: 0;
-        background: url('fundo.jpg') no-repeat center center fixed;
+        background: url("fundo.jpg") no-repeat center fixed;
         background-size: cover;
         color: #fff;
       }
@@ -122,12 +122,18 @@
       }
 
       @media (max-width: 768px) {
+        body {
+          padding: 0 10px;
+        }
+
         form {
           padding: 15px;
+          border-radius: 8px;
         }
 
         textarea {
           font-size: 0.9rem;
+          padding: 8px;
         }
 
         button {
@@ -141,18 +147,42 @@
       }
 
       @media (max-width: 480px) {
+        body {
+          padding: 0 5px;
+        }
+
         form {
           padding: 10px;
+          border-radius: 5px;
+        }
+
+        textarea {
+          font-size: 0.8rem;
+          padding: 6px;
         }
 
         button {
           display: block;
           width: 100%;
           margin-bottom: 10px;
+          font-size: 0.8rem;
+          padding: 6px;
         }
 
         h1 {
           font-size: 1.2rem;
+        }
+
+        .response {
+          font-size: 0.8rem;
+          padding: 10px;
+        }
+        .response h2 {
+          font-size: 1rem;
+        }
+
+        a {
+          font-size: 0.8rem;
         }
       }
     </style>
@@ -162,8 +192,7 @@
 
     <form method="POST">
       <div>
-        <label for="language"
-          >Selecione a linguagem de programação:</label
+        <label for="language">Selecione a linguagem de programação:</label
         ><br />
         <input type="radio" id="java" name="language" value="Java" {% if
         request.form.language == 'Java' %}checked{% endif %} />Java<br />
@@ -206,11 +235,12 @@
     {% if response %}
     <h2>Resposta:</h2>
     <p>{{ response }}</p>
-    {% endif %}   
+    {% endif %}
 
     <br /><br />
     <a
-      href="https://docs.google.com/forms/d/e/1FAIpQLSd9mLKxdP_XDVQhOQ9f8Y15D8NTP12RyShaGGI7tJk1Bv8uKw/viewform?usp=sf_link">
+      href="https://docs.google.com/forms/d/e/1FAIpQLSd9mLKxdP_XDVQhOQ9f8Y15D8NTP12RyShaGGI7tJk1Bv8uKw/viewform?usp=sf_link"
+    >
       Clique aqui para avaliar a ferramenta.
     </a>
 
