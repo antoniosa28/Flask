@@ -1,6 +1,6 @@
 # 🛠️ Ferramenta de Correção de Bugs com IA — TCC
 
-Este é o repositório do meu Trabalho de Conclusão de Curso (TCC), que apresenta uma ferramenta web desenvolvida em **Python** com **Flask**, focada no **auxílio à correção de erros de programação**. A aplicação integra a **tecnologia de linguagem natural (LLM)** do **Google Generative AI (Gemini)** para fornecer explicações detalhadas sobre erros em códigos-fonte.
+Este é o repositório do meu Trabalho de Conclusão de Curso (TCC), que apresenta uma ferramenta web desenvolvida em **Python** com *Flask*, focada no **auxílio à correção de erros de programação**. A aplicação integra a **tecnologia de linguagem natural (LLM)** do Google Generative AI (Gemini) para fornecer explicações detalhadas sobre erros em códigos-fonte.
 
 ## 📌 Objetivo
 
